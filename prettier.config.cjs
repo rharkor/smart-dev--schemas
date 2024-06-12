@@ -1,1 +1,7 @@
-module.exports = require("custom-prettier-config/base")
+module.exports = {
+  plugins: [],
+  trailingComma: "es5",
+  tabWidth: 2,
+  printWidth: 120,
+  semi: false,
+}
