@@ -6,7 +6,13 @@
   "types": "./dist/index.d.cts",
   "type": "module",
   "scripts": {
-    "build": "pkgroll"
+    "build": "pkgroll",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "prettier": "prettier --check \"**/*.{ts,tsx}\"",
+    "prettier:fix": "prettier --write \"**/*.{ts,tsx}\"",
+    "test": "exit 0",
+    "depcheck": "npx -y depcheck"
   },
   "exports": {
     ".": {
@@ -38,8 +44,14 @@
     "pkgroll": "^2.1.1"
   },
   "dependencies": {
-    "custom-prettier-config": "*",
-    "eslint-config-custom": "*",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.4.5",
     "zod": "^3.23.8"
   }
 }
