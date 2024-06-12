@@ -44,7 +44,7 @@
   "author": "HUORT Louis (https://louis.huort.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rharkor/smart-dev--schemas"
+    "url": "git+https://github.com/rharkor/smart-dev--schemas"
   },
   "license": "ISC",
   "description": "Schemas for Smart Dev api",
