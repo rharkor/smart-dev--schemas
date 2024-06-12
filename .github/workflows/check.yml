@@ -24,8 +24,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - uses: dtinth/setup-github-actions-caching-for-turbo@v1
-      - name: Set example env
-        run: npm run init:env
       - name: Lint check
         run: npm run lint
       - name: Format check
