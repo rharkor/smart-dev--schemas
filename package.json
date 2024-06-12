@@ -36,10 +36,18 @@
       }
     }
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "smart-dev",
+    "schemas",
+    "zod"
+  ],
+  "author": "HUORT Louis (https://louis.huort.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rharkor/smart-dev--schemas"
+  },
   "license": "ISC",
-  "description": "",
+  "description": "Schemas for Smart Dev api",
   "devDependencies": {
     "pkgroll": "^2.1.1",
     "@semantic-release/changelog": "^6.0.3",
