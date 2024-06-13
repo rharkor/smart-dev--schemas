@@ -42,11 +42,12 @@
     "zod"
   ],
   "author": "HUORT Louis (https://louis.huort.com)",
+  "homepage": "https://github.com/rharkor/smart-dev--schemas",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rharkor/smart-dev--schemas"
+    "url": "git+https://github.com/rharkor/smart-dev--schemas.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "description": "Schemas for Smart Dev api",
   "devDependencies": {
     "pkgroll": "^2.1.1",
