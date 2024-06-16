@@ -43,7 +43,7 @@ export const callContractMethodSchema = () =>
     method: z.string(),
     methodParams: z.array(z.unknown()).optional(),
     transactionParams: transactionParams.optional(),
-    poolId: z.string().regex(cuidRegex).nullable(), // null means use root
+    poolId: z.string().regex(cuidRegex),
     encryptionKey: z.string(),
   })
 
