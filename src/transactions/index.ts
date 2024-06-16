@@ -13,6 +13,7 @@ export const getTransactionResponseSchema = () =>
       name: z.string(),
       smartContractVersionId: z.string().nullable(),
       walletId: z.string().nullable(),
+      poolId: z.string().nullable(),
       from: z.string(),
       to: z.string(),
       rpcUrl: z.string(),
@@ -42,8 +43,7 @@ export const callContractMethodSchema = () =>
     method: z.string(),
     methodParams: z.array(z.unknown()).optional(),
     transactionParams: transactionParams.optional(),
-    walletsFolderId: z.string().regex(cuidRegex).nullable(), // null means use root
-    walletsTags: z.array(z.string().regex(tagRegex)).optional(),
+    poolId: z.string().regex(cuidRegex).nullable(), // null means use root
     encryptionKey: z.string(),
   })
 
