@@ -45,6 +45,16 @@ export const callContractMethodSchema = () =>
     transactionParams: transactionParams.optional(),
     poolId: z.string().regex(cuidRegex),
     encryptionKey: z.string(),
+    customSort: z
+      .object({
+        smartContractId: z.string().regex(cuidRegex),
+        version: z.number().optional(), // latest by default
+        method: z.string(),
+        methodParams: z.array(z.unknown()).optional(),
+        resultKind: z.enum(["boolean", "number"]),
+        direction: z.enum(["asc", "desc"]),
+      })
+      .optional(),
   })
 
 const callContractMethodResponseBaseSchema = () =>
