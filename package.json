@@ -1,6 +1,6 @@
 {
   "name": "@smart-dev/schemas",
-  "version": "1.0.0-rec-release.11",
+  "version": "1.0.0-rec-release.12",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
