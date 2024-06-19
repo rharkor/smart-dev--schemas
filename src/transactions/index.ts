@@ -51,7 +51,8 @@ export const callContractMethodSchema = () =>
         version: z.number().optional(), // latest by default
         method: z.string(),
         methodParams: z.array(z.unknown()).optional(),
-        resultKind: z.enum(["boolean", "number"]),
+        resultKind: z.enum(["boolean", "bigint"]),
+        resultKey: z.string(), // key to sort by
         direction: z.enum(["asc", "desc"]),
       })
       .optional(),
