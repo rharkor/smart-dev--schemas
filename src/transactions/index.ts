@@ -52,7 +52,7 @@ export const callContractMethodSchema = () =>
         method: z.string(),
         methodParams: z.array(z.unknown()).optional(),
         resultKind: z.enum(["boolean", "bigint"]),
-        resultKey: z.string(), //? key to sort by
+        resultKey: z.string().optional(), //? key to sort by
         direction: z.enum(["asc", "desc"]),
       })
       .optional(),
