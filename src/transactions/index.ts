@@ -39,7 +39,7 @@ export const transactionParams = z
 export const callContractMethodSchema = () =>
   z.object({
     smartContractId: z.string().regex(cuidRegex),
-    version: z.number().optional(), // latest by default
+    version: z.number().optional(), //? latest by default
     method: z.string(),
     methodParams: z.array(z.unknown()).optional(),
     transactionParams: transactionParams.optional(),
@@ -48,11 +48,11 @@ export const callContractMethodSchema = () =>
     customSort: z
       .object({
         smartContractId: z.string().regex(cuidRegex),
-        version: z.number().optional(), // latest by default
+        version: z.number().optional(), //? latest by default
         method: z.string(),
         methodParams: z.array(z.unknown()).optional(),
         resultKind: z.enum(["boolean", "bigint"]),
-        resultKey: z.string(), // key to sort by
+        resultKey: z.string(), //? key to sort by
         direction: z.enum(["asc", "desc"]),
       })
       .optional(),
