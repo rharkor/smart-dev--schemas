@@ -3,6 +3,7 @@ import { z } from "zod"
 export const getTransactionSchema = () =>
   z.object({
     id: z.string(),
+    from: z.string(),
   })
 
 export const getTransactionResponseSchema = () =>
@@ -51,6 +52,7 @@ export const callContractMethodSchema = () =>
         version: z.number().optional(), //? latest by default
         method: z.string(),
         methodParams: z.array(z.unknown()).optional(),
+        transactionParams: transactionParams.optional(),
         resultKind: z.enum(["boolean", "bigint"]),
         resultKey: z.string().optional(), //? key to sort by
         direction: z.enum(["asc", "desc"]),
@@ -118,6 +120,7 @@ export const getAvailableNodeAddressSchema = () =>
         version: z.number().optional(), //? latest by default
         method: z.string(),
         methodParams: z.array(z.unknown()).optional(),
+        transactionParams: transactionParams.optional(),
         resultKind: z.enum(["boolean", "bigint"]),
         resultKey: z.string().optional(), //? key to sort by
         direction: z.enum(["asc", "desc"]),
