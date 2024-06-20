@@ -107,3 +107,13 @@ export const callContractMethodResponseSchema = () =>
     callContractMethodResponseErrorSchema(),
     callContractMethodResponsePendingSchema(),
   ])
+
+export const getAvailableNodeAddressSchema = () =>
+  z.object({
+    poolId: z.string().regex(cuidRegex),
+  })
+
+export const getAvailableNodeAddressResponseSchema = () =>
+  z.object({
+    address: z.string(),
+  })
