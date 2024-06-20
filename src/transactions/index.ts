@@ -3,7 +3,6 @@ import { z } from "zod"
 export const getTransactionSchema = () =>
   z.object({
     id: z.string(),
-    from: z.string(),
   })
 
 export const getTransactionResponseSchema = () =>
@@ -34,6 +33,7 @@ export const cuidRegex = /^[a-z0-9]+$/
 export const transactionParams = z
   .object({
     value: z.string().optional(),
+    from: z.string().optional(),
   })
   .optional()
 
