@@ -111,6 +111,18 @@ export const callContractMethodResponseSchema = () =>
 export const getAvailableNodeAddressSchema = () =>
   z.object({
     poolId: z.string().regex(cuidRegex),
+    encryptionKey: z.string(),
+    customSort: z
+      .object({
+        smartContractId: z.string().regex(cuidRegex),
+        version: z.number().optional(), //? latest by default
+        method: z.string(),
+        methodParams: z.array(z.unknown()).optional(),
+        resultKind: z.enum(["boolean", "bigint"]),
+        resultKey: z.string().optional(), //? key to sort by
+        direction: z.enum(["asc", "desc"]),
+      })
+      .optional(),
   })
 
 export const getAvailableNodeAddressResponseSchema = () =>
