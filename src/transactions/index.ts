@@ -37,14 +37,13 @@ export const transactionParams = z
   })
   .optional()
 
-export const callContractMethodSchema = () =>
+const baseCallContractMethodSchema = () =>
   z.object({
     smartContractId: z.string().regex(cuidRegex),
     version: z.number().optional(), //? latest by default
     method: z.string(),
     methodParams: z.array(z.unknown()).optional(),
     transactionParams: transactionParams.optional(),
-    poolId: z.string().regex(cuidRegex),
     encryptionKey: z.string(),
     customSort: z
       .object({
@@ -59,6 +58,12 @@ export const callContractMethodSchema = () =>
       })
       .optional(),
   })
+
+export const callContractMethodSchema = () =>
+  z.union([
+    baseCallContractMethodSchema().extend({ poolId: z.string().regex(cuidRegex) }),
+    baseCallContractMethodSchema().extend({ walletId: z.string().regex(cuidRegex) }),
+  ])
 
 const callContractMethodResponseBaseSchema = () =>
   z.object({
