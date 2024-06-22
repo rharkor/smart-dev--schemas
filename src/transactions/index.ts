@@ -45,23 +45,25 @@ const baseCallContractMethodSchema = () =>
     methodParams: z.array(z.unknown()).optional(),
     transactionParams: transactionParams.optional(),
     encryptionKey: z.string(),
-    customSort: z
-      .object({
-        smartContractId: z.string().regex(cuidRegex),
-        version: z.number().optional(), //? latest by default
-        method: z.string(),
-        methodParams: z.array(z.unknown()).optional(),
-        transactionParams: transactionParams.optional(),
-        resultKind: z.enum(["boolean", "bigint"]),
-        resultKey: z.string().optional(), //? key to sort by
-        direction: z.enum(["asc", "desc"]),
-      })
-      .optional(),
   })
 
 export const callContractMethodSchema = () =>
   z.union([
-    baseCallContractMethodSchema().extend({ poolId: z.string().regex(cuidRegex) }),
+    baseCallContractMethodSchema().extend({
+      poolId: z.string().regex(cuidRegex),
+      customSort: z
+        .object({
+          smartContractId: z.string().regex(cuidRegex),
+          version: z.number().optional(), //? latest by default
+          method: z.string(),
+          methodParams: z.array(z.unknown()).optional(),
+          transactionParams: transactionParams.optional(),
+          resultKind: z.enum(["boolean", "bigint"]),
+          resultKey: z.string().optional(), //? key to sort by
+          direction: z.enum(["asc", "desc"]),
+        })
+        .optional(),
+    }),
     baseCallContractMethodSchema().extend({ walletId: z.string().regex(cuidRegex) }),
   ])
 
