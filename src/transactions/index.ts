@@ -63,12 +63,12 @@ export const callContractMethodSchema = () =>
           direction: z.enum(["asc", "desc"]),
         })
         .optional(),
-      walletId: z.never(),
+      walletId: z.never().optional(),
     }),
     baseCallContractMethodSchema().extend({
       walletId: z.string().regex(cuidRegex),
-      poolId: z.never(),
-      customSort: z.never(),
+      poolId: z.never().optional(),
+      customSort: z.never().optional(),
     }),
   ])
 
