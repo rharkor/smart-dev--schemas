@@ -34,6 +34,8 @@ export const transactionParams = z
   .object({
     value: z.string().optional(),
     from: z.string().optional(),
+    gasPrice: z.string().optional(),
+    gasLimit: z.string().optional(),
   })
   .optional()
 
