@@ -23,7 +23,7 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm install
-      - uses: rharkor/caching-for-turbo@v1.8
+      - uses: rharkor/caching-for-turbo@v2.5.1
       - name: Lint check
         run: npm run lint
       - name: Format check
@@ -45,6 +45,6 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm install
-      - uses: rharkor/caching-for-turbo@v1.8
+      - uses: rharkor/caching-for-turbo@v2.5.1
       - name: Build
         run: npm run build
